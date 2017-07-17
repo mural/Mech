@@ -1,0 +1,76 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            url "https://maven.google.com"
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        classpath "io.realm:realm-gradle-plugin:3.5.0"
+    }
+}
+
+repositories {
+    jcenter()
+    maven {
+        url "https://maven.google.com"
+    }
+    flatDir{
+        dirs 'libs'
+    }
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+apply plugin: 'realm-android'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "26.0.0"
+    defaultConfig {
+        applicationId "com.mech"
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+def supportVersion = '25.4.0'
+def androidAnnotationsVersion = '4.1.0'
+def guavaVersion = '19.0'
+def eventBusVersion = '2.4.0'
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile "com.android.support:support-core-utils:25.4.0"
+    compile "com.android.support:appcompat-v7:$supportVersion"
+    compile "com.android.support:design:$supportVersion"
+    compile "com.android.support:recyclerview-v7:$supportVersion"
+    compile 'com.android.support.constraint:constraint-layout:1.0.1'
+
+    testCompile 'junit:junit:4.12'
+
+    // Android Annotation
+    apt "org.androidannotations:androidannotations:$androidAnnotationsVersion"
+    compile "org.androidannotations:androidannotations-api:$androidAnnotationsVersion"
+    compile "org.androidannotations:rest-spring-api:$androidAnnotationsVersion"
+    apt "org.androidannotations:rest-spring:$androidAnnotationsVersion"
+
+    compile "com.google.guava:guava:$guavaVersion"
+    compile "de.greenrobot:eventbus:$eventBusVersion"
+
+    compile 'eu.davidea:flexible-adapter:5.0.0-b8'
+}

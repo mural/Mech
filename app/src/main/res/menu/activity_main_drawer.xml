@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_info"
+            android:icon="@drawable/ic_menu_info"
+            android:title="Mech S.R.L." />
+        <item
+            android:id="@+id/nav_products"
+            android:icon="@drawable/ic_menu_agenda"
+            android:title="Productos" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Promociones" />
+    </group>
+
+    <item android:title="Comunicarse">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Compartir" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Contactanos" />
+            <item
+                android:id="@+id/nav_manage"
+                android:icon="@drawable/ic_menu_more"
+                android:title="Acerca de..." />
+        </menu>
+    </item>
+
+</menu>

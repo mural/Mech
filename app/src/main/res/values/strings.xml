@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Mech</string>
+
+    <string name="navigation_drawer_open">Abrir menu</string>
+    <string name="navigation_drawer_close">Cerrar menu</string>
+    <string name="action_settings">Ajustes</string>
+
+    <string name="title_activity_products_list">Productos</string>
+    <string name="title_activity_product_details">Detalle de Producto</string>
+
+    <string name="info_title_1">Productos y Servicios para el Carpintero</string>
+    <string name="info_detail_1">
+        Somos una empresa líder en la zona oeste, que hace mas de 30 años nos dedicamos a la distribución y comercialización de las principales marcas de productos para la industria del mueble.
+            Brindamos un excelente servicio gracias a nuestra infraestructura y más de cuarenta personas altamente capacitadas en su función.
+            Nuestro mayor compromiso es encontrar siempre soluciones a las demandas de la industria y el público en general, bajo las consignas de atención altamente personalizada y profesional, stock permanente de productos y buenos precios."
+    </string>
+</resources>
