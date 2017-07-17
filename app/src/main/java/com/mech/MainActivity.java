@@ -111,19 +111,12 @@ public class MainActivity extends BaseActivity
         if (id == R.id.nav_info) {
             getSupportFragmentManager().beginTransaction().replace(R.id.content_fragment, infoFragment).commit();
             appBarLayout.setExpanded(true);
-            toolbar.setTitle("Mech S.R.L.");
+            toolbar.setTitle(R.string.promotor);
         } else if (id == R.id.nav_products) {
             getSupportFragmentManager().beginTransaction().replace(R.id.content_fragment, productsFragment).commit();
             appBarLayout.setExpanded(false);
-            toolbar.setTitle("Productos");
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+            toolbar.setTitle(R.string.title_categories_fragment);
+            appBarLayout.invalidate();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -133,10 +126,10 @@ public class MainActivity extends BaseActivity
 
     private void initListFragment() {
         infoFragment = InfoFragment_.builder().build();
-        productsFragment = com.mech.CategoriesListFragment_.builder().build();
+        productsFragment = CategoriesListFragment_.builder().build();
 
         getSupportFragmentManager().beginTransaction().replace(R.id.content_fragment, infoFragment).commit();
         appBarLayout.setExpanded(true);
-        toolbar.setTitle("Mech S.R.L.");
+        toolbar.setTitle(R.string.promotor);
     }
 }

@@ -8,11 +8,11 @@
             android:title="Mech S.R.L." />
         <item
             android:id="@+id/nav_products"
-            android:icon="@drawable/ic_menu_agenda"
+            android:icon="@drawable/ic_menu_products"
             android:title="Productos" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_manage"
+            android:id="@+id/nav_promotions"
+            android:icon="@drawable/ic_menu_promotions"
             android:title="Promociones" />
     </group>
 
@@ -23,13 +23,9 @@
                 android:icon="@drawable/ic_menu_share"
                 android:title="Compartir" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
+                android:id="@+id/nav_contact"
+                android:icon="@drawable/ic_menu_contact"
                 android:title="Contactanos" />
-            <item
-                android:id="@+id/nav_manage"
-                android:icon="@drawable/ic_menu_more"
-                android:title="Acerca de..." />
         </menu>
     </item>
 

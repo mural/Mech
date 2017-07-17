@@ -1,10 +1,12 @@
 <resources>
     <string name="app_name">Mech</string>
+    <string name="promotor">Mech S.R.L. !</string>
 
     <string name="navigation_drawer_open">Abrir menu</string>
     <string name="navigation_drawer_close">Cerrar menu</string>
     <string name="action_settings">Ajustes</string>
 
+    <string name="title_categories_fragment">Categorias</string>
     <string name="title_activity_products_list">Productos</string>
     <string name="title_activity_product_details">Detalle de Producto</string>
 
