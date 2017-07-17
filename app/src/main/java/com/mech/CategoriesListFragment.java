@@ -72,6 +72,8 @@ public class CategoriesListFragment extends Fragment {
         recyclerView.addItemDecoration(dividerItemDecoration);
 
         setupView();
+
+        getActivity().setTitle(R.string.title_categories_fragment);
     }
 
     private void setupView() {

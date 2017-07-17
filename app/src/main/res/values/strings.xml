@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Mech</string>
-    <string name="promotor">Mech S.R.L. !</string>
+    <string name="promotor">Mech S.R.L.</string>
 
     <string name="navigation_drawer_open">Abrir menu</string>
     <string name="navigation_drawer_close">Cerrar menu</string>

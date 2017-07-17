@@ -14,12 +14,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
-@EActivity
+@EActivity(R.layout.activity_main)
 public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -32,21 +33,30 @@ public class MainActivity extends BaseActivity
     protected InfoFragment infoFragment;
     protected CategoriesListFragment productsFragment;
 
+    @ViewById(R.id.toolbar_title)
+    protected TextView toolbarTitle;
     @ViewById(R.id.toolbar)
     protected Toolbar toolbar;
     @ViewById(R.id.toolbar_layout)
     protected CollapsingToolbarLayout collapsingToolbarLayout;
     @ViewById(R.id.app_bar)
     protected AppBarLayout appBarLayout;
+    @ViewById(R.id.fab)
+    protected FloatingActionButton fab;
+    @ViewById(R.id.drawer_layout)
+    protected DrawerLayout drawer;
+    @ViewById(R.id.nav_view)
+    protected NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+    }
+
+    @AfterViews
+    protected void afterViews() {
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,18 +65,13 @@ public class MainActivity extends BaseActivity
             }
         });
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-    }
 
-    @AfterViews
-    protected void afterViews() {
         initListFragment();
     }
 
@@ -111,15 +116,13 @@ public class MainActivity extends BaseActivity
         if (id == R.id.nav_info) {
             getSupportFragmentManager().beginTransaction().replace(R.id.content_fragment, infoFragment).commit();
             appBarLayout.setExpanded(true);
-            toolbar.setTitle(R.string.promotor);
+            toolbarTitle.setText(R.string.promotor);
         } else if (id == R.id.nav_products) {
             getSupportFragmentManager().beginTransaction().replace(R.id.content_fragment, productsFragment).commit();
             appBarLayout.setExpanded(false);
-            toolbar.setTitle(R.string.title_categories_fragment);
-            appBarLayout.invalidate();
+            toolbarTitle.setText(R.string.title_categories_fragment);
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
@@ -130,6 +133,6 @@ public class MainActivity extends BaseActivity
 
         getSupportFragmentManager().beginTransaction().replace(R.id.content_fragment, infoFragment).commit();
         appBarLayout.setExpanded(true);
-        toolbar.setTitle(R.string.promotor);
+        toolbarTitle.setText(R.string.promotor);
     }
 }
