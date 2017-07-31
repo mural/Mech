@@ -6,7 +6,17 @@ package com.mech;
 
 public class Product {
 
+    private int productCode;
     private String name;
+    private int pictureId;
+
+    public int getProductCode() {
+        return productCode;
+    }
+
+    public void setProductCode(int productCode) {
+        this.productCode = productCode;
+    }
 
     public String getName() {
         return name;
@@ -15,4 +25,13 @@ public class Product {
     public void setName(String name) {
         this.name = name;
     }
+
+    public int getPictureId() {
+        return pictureId;
+    }
+
+    public void setPictureId(int pictureId) {
+        this.pictureId = pictureId;
+    }
+
 }

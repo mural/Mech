@@ -42,14 +42,20 @@ public class CategoriesListFragment extends Fragment {
         categoryList = Lists.newArrayList();
         Category category1 = new Category();
         category1.setName("Placas");
+        category1.setDetail("Amplio catalogo de placas de madera, cortes personalizados");
+        category1.setPictureId(R.drawable.melamina);
         categoryList.add(category1);
 
         Category category2 = new Category();
         category2.setName("Herrajes");
+        category2.setDetail("Encuentre los herrajes de las marcas mas reconocidas");
+        category2.setPictureId(R.drawable.herrajes);
         categoryList.add(category2);
 
         Category category3 = new Category();
         category3.setName("Herramientas");
+        category3.setDetail("La mayor variedad de herramientas de alta calidad");
+        category3.setPictureId(R.drawable.herramientas);
         categoryList.add(category3);
 
         categoriesListAdapter = new CategoriesListAdapter(categoryList);
